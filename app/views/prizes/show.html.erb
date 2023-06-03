@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @prize %>
+
+<% if @prize.winner_id %>
+  <% winner = Applicant.find(@prize.winner_id) %>
+  <h3>Winner: <%= winner.name %> <%= winner.order_id %></h3>
+<% else %>
+  <p>No winner generated yet.</p>
+  <%= button_to "Generate Winner", generate_winner_prize_path(@prize), method: :post %>
+<% end %>
+
+<div>
+  <%= link_to "Edit this prize", edit_prize_path(@prize) %> |
+  <%= link_to "Back to prizes", prizes_path %>
+
+  <%= button_to "Destroy this prize", @prize, method: :delete %>
+</div>

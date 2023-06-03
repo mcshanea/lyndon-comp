@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Applicants</h1>
+
+<div id="applicants">
+  <% @applicants.each do |applicant| %>
+    <%= render applicant %>
+    <p>
+      <%= link_to "Show this applicant", applicant %>
+    </p>
+  <% end %>
+
+  <%= form_tag import_applicants_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import Applicants" %>
+  <% end %>
+</div>
+
+<%= link_to "New applicant", new_applicant_path %>
