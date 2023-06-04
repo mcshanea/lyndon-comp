@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
+<%= image_tag("bike-prize.jpg", width: 600) %>
+
 <%= render @competition %>
 
 <!-- Render child records -->
@@ -8,10 +10,3 @@
   <%= render partial: 'competitions/prize', locals: { prize: child_record } %>
 <% end %>
 </ul>
-
-<div>
-  <%= link_to "Edit this competition", edit_competition_path(@competition) %> |
-  <%= link_to "Back to competitions", competitions_path %>
-
-  <%= button_to "Destroy this competition", @competition, method: :delete %>
-</div>

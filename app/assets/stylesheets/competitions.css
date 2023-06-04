@@ -22,3 +22,7 @@
   max-width: 200px;
   max-height: 200px;
 }
+
+.prize-winner {
+    background-color: cyan;
+}

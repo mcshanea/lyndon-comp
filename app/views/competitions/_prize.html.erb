@@ -6,10 +6,12 @@
 
   <% if prize.winner_id %>
   <% winner = Applicant.find(prize.winner_id) %>
-  <h3>Winner: <%= winner.name %> <%= winner.order_id %></h3>
+  <div class="prize-winner">
+    <h3>Winner: <%= winner.name %> <%= winner.order_id %></h3>
+  </div>
 <% else %>
-  <p>No winner generated yet.</p>
-  <%= button_to "Generate Winner", generate_winner_prize_path(prize), method: :post %>
+  <p>No winner picked yet.</p>
+  <%= button_to "Pick a Winner", generate_winner_prize_path(prize), method: :post %>
 <% end %>
 
 </li>
