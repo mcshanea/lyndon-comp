@@ -30,6 +30,6 @@ production:
   database: neondb
   pool: 5
   username: mcshanea
-  password: ENV.fetch("POSTGRES_PASS")
+  password: <%= ENV.fetch("POSTGRES_PASS") %>
   host: ep-quiet-glitter-227738.eu-central-1.aws.neon.tech # remote database server ip
   port: 5432 
