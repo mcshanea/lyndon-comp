@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   resources :applicants  do
     collection { post :import }
+    delete :destroy_all, on: :collection
   end
   resources :competitions
   get 'hello_world/index'

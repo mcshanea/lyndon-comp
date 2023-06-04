@@ -16,4 +16,8 @@
   <% end %>
 </div>
 
+<%= form_with(model: Applicant, method: :delete, url: destroy_all_applicants_path) do |form| %>
+  <%= form.submit "Destroy All", class: "btn btn-danger" %>
+<% end %>
+
 <%= link_to "New applicant", new_applicant_path %>

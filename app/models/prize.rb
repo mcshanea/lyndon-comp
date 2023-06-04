@@ -3,7 +3,8 @@ class Prize < ApplicationRecord
 
   def pick_winner
     applicants = Applicant.where( :competition_id => self.competition_id )
-    winner = applicants.sample
+    winner = applicants.where(won: nil).sample
+    winner.update_attribute(:won, true)
     update(winner_id: winner.id) # Assuming the winner_id column exists in the Prize model
     winner
   end

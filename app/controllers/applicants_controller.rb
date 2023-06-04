@@ -45,6 +45,11 @@ class ApplicantsController < ApplicationController
     redirect_to applicants_url, notice: "Applicant was successfully destroyed."
   end
 
+  def destroy_all
+    Applicant.destroy_all
+    redirect_to applicants_path, notice: "All items were successfully destroyed."
+  end
+
   def import
     Applicant.import(params[:file])
     redirect_to applicants_path, notice: "Applicants imported successfully."
