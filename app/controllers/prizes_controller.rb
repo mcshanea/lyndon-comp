@@ -48,7 +48,7 @@ class PrizesController < ApplicationController
   def generate_winner
     @prize = Prize.find(params[:id])
     @winner = @prize.pick_winner
-    redirect_to prize_path(@prize), notice: "Winner generated successfully."
+    redirect_to competition_path(@prize.competition), notice: "Winner generated successfully."
   end
 
   private
