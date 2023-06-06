@@ -25,6 +25,10 @@ h1 {
     background-color:lightgrey;
 }
 
+.prize-winner {
+    padding: 5px 10px;
+}
+
 .position-1 .prize-winner strong {
     color:crimson;
 }
