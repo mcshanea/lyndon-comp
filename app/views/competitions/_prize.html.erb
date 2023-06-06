@@ -1,13 +1,12 @@
-<li class="prize-item">
+<li class="prize-item position-<%= prize.prize_position %>">
   <div class="prize-title">
-    <strong>Name:</strong>
-    <%= prize.name %>
+    <h3><%= prize.name %></h3>
   </div>
 
   <% if prize.winner_id %>
   <% winner = Applicant.find(prize.winner_id) %>
   <div class="prize-winner">
-    <h3>Winner: <%= winner.name %> <%= winner.order_id %></h3>
+    <h3><strong>WINNER:</strong> <%= link_to winner.name, applicant_path(winner.id) %> <%= winner.order_id %></h3>
   </div>
 <% else %>
   <p>No winner picked yet.</p>

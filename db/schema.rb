@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_130119) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_140430) do
   create_table "applicants", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_130119) do
     t.integer "competition_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "prize_position"
     t.index ["competition_id"], name: "index_prizes_on_competition_id"
   end
 

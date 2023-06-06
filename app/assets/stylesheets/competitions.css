@@ -9,6 +9,26 @@
   padding: 10px;
 }
 
+h1 {
+    text-align: center;
+}
+
+.position-1 {
+    background-color: darkturquoise;
+}
+
+.position-2 {
+    background-color:burlywood;
+}
+
+.position-3 {
+    background-color:lightgrey;
+}
+
+.position-1 .prize-winner strong {
+    color:crimson;
+}
+
 .prize-title {
   font-size: 18px;
   font-weight: bold;
