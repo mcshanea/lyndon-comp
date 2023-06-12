@@ -6,7 +6,7 @@
 
 <!-- Render child records -->
 <ul class="prize-list">
-<% @competition.prizes.order('prize_position ASC').each do |child_record| %>
+<% @competition.prizes.order(:prize_position).each do |child_record| %>
   <%= render partial: 'competitions/prize', locals: { prize: child_record } %>
 <% end %>
 </ul>
