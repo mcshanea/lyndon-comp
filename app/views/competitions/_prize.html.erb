@@ -6,7 +6,7 @@
   <% if prize.winner_id %>
   <% winner = Applicant.find(prize.winner_id) %>
   <div class="prize-winner">
-    <h3><strong>WINNER:</strong> <%= link_to winner.name, applicant_path(winner.id) %> <%= winner.order_id %></h3>
+    <h3><strong>WINNER:</strong> <%= winner.line_number %> <%= link_to winner.name, applicant_path(winner.id) %> <%= winner.order_id %></h3>
   </div>
 <% else %>
   <p>No winner picked yet.</p>
