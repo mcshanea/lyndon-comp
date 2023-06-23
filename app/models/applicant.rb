@@ -3,13 +3,17 @@ require 'csv'
 class Applicant < ApplicationRecord
   belongs_to :competition
 
-  attr_accessor :quantity
+  attr_accessor :quantity, :product_id
 
   def self.import(file)
     check_for_multiple = []
     competition = Competition.first
 
     CSV.foreach(file.path, headers: true, :header_converters => lambda { |h| h.downcase.gsub(' ', '_') }) do |row|
+      if row["product_id"] != "12283"
+        next
+      end
+
       if row["answer"] != "74" && row["answer"] != "70"
         if row["answer"].blank?
           check_for_multiple << row
