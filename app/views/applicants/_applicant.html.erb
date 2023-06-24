@@ -39,4 +39,19 @@
     <%= applicant.competition_id %>
   </p>
 
+  <% if applicant.won == true %>
+  <% prize = Prize.find_by_winner_id( applicant.id ) %>
+  <p>
+<strong>Email Template:</strong>
+  Hey <%= applicant.name %>,
+
+You’ve been selected position <%= prize.prize_position %> prize winner in our draw! Thought you’d like to know as soon as possible, so we’ll follow this up with how you can claim your prize over the next few days.
+
+Congratulations!
+
+Warm Regards,
+Lyndon
+  </p>
+  <% end %>
+
 </div>
